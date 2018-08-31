@@ -169,7 +169,21 @@ key: "28f20e20e6"
 
 
 `@script`
+- The magic command %timeit not only allows us to time specific lines of code quickly, it also provides additional information that we weren't getting with our old inefficient timer.
 
+- Notice that the output of %timeit provides some useful information
+
+- First, we see that a mean and standard deviation of time is provided
+
+- We also see that multiple runs and loops were generated
+
+- This is another advantage of using the magic command %timeit.
+
+- %timeit will not just run through the provided code once like our old inefficeint timer did.
+
+- Instead, %timeit will run through the provided code multiple times and provided an average and standard deviation for the runtime of the code.
+
+- This helps us get a more accurate representation of the actual runtime rather than relying on just one iteration of the code as we did in the past.
 
 
 ---
@@ -198,7 +212,13 @@ key: "604f223d7e"
 
 
 `@script`
+- %timeit doesn't just give us more information about the runtime of a given code block, it also gives us some handy functionality as well.
 
+- We can specify the number of runs using the -r flag and the number of loops using the -n flag.
+
+- We can also run %timeit on a single line of code (called line magic) using one Percentage sign, or, we can run %timeit on multiple lines of code (called cell magic) using two Percentage sings.
+
+- Most of the time we will be wrapping multiple lines of code in a function, but it is helpful to note that %timeit can handle single or multiple lines of code
 
 
 ---
@@ -253,6 +273,22 @@ key: "04753d2c90"
            improvement = (a_time.average - b_time.average)/b_time.average * -100
            print('Run time improvement: {:.2f}%'.format(improvement))
            Run time improvement: 59.31%
+
+
+`@script`
+
+
+
+---
+## Orders of Time
+
+```yaml
+type: "FullSlide"
+key: "c4c5da1108"
+```
+
+`@part1`
+
 
 
 `@script`
