@@ -71,7 +71,7 @@ success_msg("Some praise! Then reinforce a learning objective from the exercise.
 
 ---
 
-## Insert exercise title here
+## Lesson 2.1: Testing Run Time
 
 ```yaml
 type: VideoExercise 
