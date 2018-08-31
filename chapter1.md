@@ -81,3 +81,15 @@ key: 948bea6382
 
 `@projector_key`
 287791ac4dae03ef70496b93eeac7e4e
+---
+
+## Lesson 2.1: Testing Run Time2
+
+```yaml
+type: VideoExercise 
+xp: 50 
+key: 933ccccefb   
+```
+
+`@projector_key`
+425413fbd207d05912e93003195b8b40
