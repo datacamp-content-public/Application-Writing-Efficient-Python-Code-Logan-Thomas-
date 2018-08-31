@@ -140,7 +140,15 @@ Now becomes
 
 
 `@script`
+- Now that we know we have a %timeit magic command in our toolbelt, how do we use it.
 
+- Consider the previous example where we wrote our own timer to get the runtime for selecting 1 mil random numbers between 0 and 1.
+
+- Instead of setting up a start time and calculating  the run time on our own, the magic command %timeit allows us to provide the single line of code we want to time.
+
+- That's it! One line of code using the magic command %timeit allows to calculate the run time without developing any additional code.
+
+- Magic indeed!
 
 
 ---
