@@ -291,7 +291,19 @@ key: "04753d2c90"
 
 
 `@script`
+- Now that we know how to use the %timeit magic command and how to store its output, we can begin comparing results
 
+- Suppose you have two functions that do the exact same thing (in this case build a list of integers from 0 to 999).
+
+- make_list_a() uses a list comprehension to build the integer list
+
+- make_list_b() uses a for loop to loop over the integers and adds each integer to a list
+
+- We can to see which of these implementations is faster and more efficient
+
+- We can compare the two functions using the %timeit magic command
+
+- Here we see that the list comprehension method (make_list_a) is a much better implementation.
 
 
 ---
@@ -303,11 +315,22 @@ key: "c4c5da1108"
 ```
 
 `@part1`
+- Reference for orders of magnitude (fastest at top)
 
+| symbol |        name | unit (s) | 
+|--------|-------------|----------|
+|     ns |  nanosecond |  10^(-9) |
+|     µs | microsecond |  10^(-6) |
+|     ms | millisecond |  10^(-3) |
+|      s |      second |   10^(0) |
 
 
 `@script`
+- For convenience, a table to time orders of magnitude is provided here
 
+- The table is ordered from fastest at the top to slowest at the bottom. 
+
+- Feel free to reference this table when comparing %timeit analyses
 
 
 ---
