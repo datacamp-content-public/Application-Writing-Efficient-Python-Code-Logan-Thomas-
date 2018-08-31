@@ -3,7 +3,8 @@ title: Insert title here
 key: 287791ac4dae03ef70496b93eeac7e4e
 
 ---
-## I Feel the Need... <br>
+## I Feel the Need...<br>
+The Need For Speed
 
 ```yaml
 type: "TitleSlide"
@@ -40,15 +41,19 @@ key: "4141a4e178"
 `@part1`
 - We could write our own timer...
 
-    `import datetime as dt`
+      import datetime as dt
+      import numpy as np
 
-    `start = dt.datetime.now()`
+      # set start time
+      start = dt.datetime.now()
 
-    `print('Hello World')`
+      # Do something
+      rand_numbs = np.random.rand(1000000)
 
-    `run_time = dt.datetime.now() - start`
+      # Calculate runtime (now - start)
+      run_time = dt.datetime.now() - start
 
-    `print('run time: {}'.format(run_time))`
+      print('run time: {}'.format(run_time))
 
 
 - But this seems verbose, clunky, and inefficient...
@@ -67,12 +72,15 @@ key: "8164cc28e0"
 ```
 
 `@part1`
-- A better way to calculate runtime with iPython magic command **%timeit**
+- Calculate runtime with iPython magic command **%timeit**
 
-- Magic commands are enhancements added on top of the normal Python syntax
-  - prefixed by the "%" character
-  - Can operate on a single line of code using one '%' character and on multiple lines of code using tow '%' characters
+- **Magic commands** are enhancements added on top of the normal Python syntax
+  - Prefixed by the "%" character
+  - Can operate on a single line of code using one '%' character and on multiple lines of code using two '%' characters
   - Link to docs ([here](https://ipython.readthedocs.io/en/stable/interactive/magics.html))
+
+        %timeit np.random.rand(1000000)
+        %%timeit
 
 
 `@script`
