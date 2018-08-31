@@ -71,7 +71,7 @@ success_msg("Some praise! Then reinforce a learning objective from the exercise.
 
 ---
 
-## Lesson 2.1: Testing Run Time
+## Lesson 2.1: Testing Run Time Old
 
 ```yaml
 type: VideoExercise 
@@ -83,13 +83,13 @@ key: 948bea6382
 287791ac4dae03ef70496b93eeac7e4e
 ---
 
-## Lesson 2.1: Testing Run Time 2
+## Lesson 2.1: Testing Run Time
 
 ```yaml
 type: VideoExercise 
 xp: 50 
-key: 06eb8dfc3e   
+key: e4cfbd9e05   
 ```
 
 `@projector_key`
-6327df6d3e170c922b2a451b8fdb4c38
+c809b53dd88a8fbe0d9c61398fb6efa1
