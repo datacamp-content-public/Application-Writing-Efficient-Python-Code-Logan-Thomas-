@@ -36,6 +36,8 @@ title: Senior Data Scientist - Nielsen
 ```yaml
 type: "FullSlide"
 key: "4141a4e178"
+disable_transition: false
+center_content: false
 ```
 
 `@part1`
@@ -60,7 +62,23 @@ key: "4141a4e178"
 
 
 `@script`
+- In order to compare runtimes, we first need a way to compute the run time for a line or number of lines of code
 
+_ We could do this using a simple approach with the datetime module
+
+- We would set the start date as the current time before executing a line of code.
+
+- We would then execute our line of code (here selecting 1 mil random numbers between 0 and 1)
+
+- Then, we would calculate the run time as the current time after executing our code minus what the start time was before executing our code
+
+- We print the run time in order to see how long selecting 1 mil random numbers took.
+
+- Although this is one way to time a specific line of code, we can see that this would quickly become verbose and clunky.
+
+- We would need to set multiple start and end times to calculate run times for different pieces of our code.
+
+- There has to be a better way...
 
 
 ---
@@ -81,7 +99,18 @@ key: "8164cc28e0"
 
 
 `@script`
+- Luckily for us, iPython comes with some handy built it magic commands that we can use to time our code
 
+- Magic commands are enhancements that have been added on top of the normal Python syntax.
+
+- These commands are prefixed with the percentage sign
+
+- If you aren't familiar with magic commands, take a moment to review the documentation using the provided link.
+
+- To see a list of all magic command available to us, use %lsmagic to list all magic commands.
+
+- We will focus only on the %timeit magic command moving forward, but it is helpful to know what magic commands are at your disposal. 
+ignsign
 
 
 ---
