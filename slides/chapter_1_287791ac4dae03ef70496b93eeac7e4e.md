@@ -136,7 +136,7 @@ key: "28f20e20e6"
 
 
 ---
-## Insert title here...
+## %timeit functionality
 
 ```yaml
 type: "FullSlide"
@@ -144,8 +144,78 @@ key: "604f223d7e"
 ```
 
 `@part1`
-time it with %%
-time it with -n, -r, -o
+- %timeit provides functionality for setting the number of runs and/or loops
+        # Set number of runs to 1; number of loops to 10
+        %timeit -r1 -n10 rand_numbs = np.random.rand(1000000)
+        13.4 ms ± 0 ns per loop (mean ± std. dev. of 1 run, 10 loops each)
+        
+- %timeit can be run on a single line or multiple lines of code
+        # Single line (line magic)
+        %timeit l = [x for x in range(10)] 
+        
+        # Multi line (cell magic)
+        %%timeit
+        l = []
+        for x in range(10):
+            l.append(x)
+
+
+`@script`
+
+
+
+---
+## saving %timeit output
+
+```yaml
+type: "FullSlide"
+key: "0d2d88d034"
+```
+
+`@part1`
+- %timeit also allows us to save the output as a variable
+
+        a = %timeit -o rand_numbs = np.random.rand(1000000)
+
+- This allows us to dig deeper into the execution times of each run
+    - a.all_runs
+    - a.average 
+    - a.best
+    - a.worst
+
+
+`@script`
+
+
+
+---
+## Using %timeit to compare
+
+```yaml
+type: "FullSlide"
+key: "04753d2c90"
+```
+
+`@part1`
+- Saving the output from two %timeit analyses makes it easy to compare
+            def make_list_a():
+                return [x for x in range(1000)]
+
+            def make_list_b():
+                l = []
+                for x in range(1000):
+                    l.append(x)
+                return l
+
+           a_time = %timeit -o make_list_a()
+           37.9 µs ± 1.16 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+           b_time = %timeit -o make_list_b()
+           93.1 µs ± 8.34 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+           improvement = (a_time.average - b_time.average)/b_time.average * -100
+           print('Run time improvement: {:.2f}%'.format(improvement))
+           Run time improvement: 59.31%
 
 
 `@script`
