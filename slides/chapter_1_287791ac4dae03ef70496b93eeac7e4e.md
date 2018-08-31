@@ -223,7 +223,7 @@ key: "04753d2c90"
 
 
 ---
-## Final Slide
+## Off to the Races!
 
 ```yaml
 type: "FinalSlide"
@@ -231,5 +231,9 @@ key: "31cb057257"
 ```
 
 `@script`
+- Now that we know how to use the magic command %timeit, we can compare different codes bases in order to select the one that is most efficient
 
+- In the following exercises, you will practice timing different lines of code and selecting which implementations are best based on runtime
+
+- It's off the to races. Enjoy.
 
