@@ -76,11 +76,76 @@ key: "8164cc28e0"
 
 - **Magic commands** are enhancements added on top of the normal Python syntax
   - Prefixed by the "%" character
-  - Can operate on a single line of code using one '%' character and on multiple lines of code using two '%' characters
   - Link to docs ([here](https://ipython.readthedocs.io/en/stable/interactive/magics.html))
+  - See all avaiable magic commands with `%lsmagic`
 
-        %timeit np.random.rand(1000000)
-        %%timeit
+
+`@script`
+
+
+
+---
+## %timeit intro
+
+```yaml
+type: "FullSlide"
+key: "9e83557fec"
+```
+
+`@part1`
+Old, ineffieceint timer
+      # set start time
+      start = dt.datetime.now()
+
+      # Do something
+      rand_numbs = np.random.rand(1000000)
+
+      # Calculate runtime (now - start)
+      run_time = dt.datetime.now() - start
+
+      print('run time: {}'.format(run_time))
+
+Now becomes
+
+      %timeit rand_numbs = np.random.rand(1000000)
+
+
+`@script`
+
+
+
+---
+## %timeit output
+
+```yaml
+type: "FullSlide"
+key: "28f20e20e6"
+```
+
+`@part1`
+- %timeit gives additional information beyond one timer run
+        %timeit rand_numbs = np.random.rand(1000000)
+        12.7 ms ± 1.15 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+    - 12.7 ms mean 
+    - 1.15 ms standard deviation
+    - 7 runs (with 100 loops each run)
+
+
+`@script`
+
+
+
+---
+## Insert title here...
+
+```yaml
+type: "FullSlide"
+key: "604f223d7e"
+```
+
+`@part1`
+time it with %%
+time it with -n, -r, -o
 
 
 `@script`
