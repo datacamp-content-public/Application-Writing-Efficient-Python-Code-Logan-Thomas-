@@ -162,8 +162,8 @@ key: "28f20e20e6"
 
 `@part1`
 - %timeit gives additional information beyond one timer run
-        %timeit rand_numbs = np.random.rand(1000000)
-        12.7 ms ± 1.15 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+        In [1]: %timeit rand_numbs = np.random.rand(1000000)
+        Out[1]: 12.7 ms ± 1.15 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
     - 12.7 ms mean 
     - 1.15 ms standard deviation
     - 7 runs (with 100 loops each run)
@@ -198,8 +198,8 @@ key: "604f223d7e"
 `@part1`
 - %timeit provides functionality for setting the number of runs and/or loops
         # Set number of runs to 1; number of loops to 10
-        %timeit -r1 -n10 rand_numbs = np.random.rand(1000000)
-        13.4 ms ± 0 ns per loop (mean ± std. dev. of 1 run, 10 loops each)
+        In [1]: %timeit -r1 -n10 rand_numbs = np.random.rand(1000000)
+        Out[1]: 13.4 ms ± 0 ns per loop (mean ± std. dev. of 1 run, 10 loops each)
         
 - %timeit can be run on a single line or multiple lines of code
         # Single line (line magic)
@@ -280,15 +280,15 @@ key: "04753d2c90"
                     l.append(x)
                 return l
 
-           a_time = %timeit -o make_list_a()
-           37.9 µs ± 1.16 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+           In [1]: a_time = %timeit -o make_list_a()
+           Out[1]: 37.9 µs ± 1.16 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 
-           b_time = %timeit -o make_list_b()
-           93.1 µs ± 8.34 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+           In [2]: b_time = %timeit -o make_list_b()
+           Out[2]: 93.1 µs ± 8.34 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 
-           improvement = (a_time.average - b_time.average)/b_time.average * -100
-           print('Run time improvement: {:.2f}%'.format(improvement))
-           Run time improvement: 59.31%
+           In [3]: improvement = (a_time.average - b_time.average)/b_time.average * -100
+                  print('Run time improvement: {:.2f}%'.format(improvement))
+           Out[3]: Run time improvement: 59.31%
 
 
 `@script`
