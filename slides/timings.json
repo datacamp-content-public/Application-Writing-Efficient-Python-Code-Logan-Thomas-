@@ -105,21 +105,35 @@
     {
       "timing": 0,
       "state": {
-        "indexh": 1,
-        "indexf": -1
-      }
-    },
-    {
-      "timing": 0,
-      "state": {
         "indexh": 0,
         "indexf": 0
       }
     },
     {
-      "timing": 0.9647841539528432,
+      "timing": 0.039377792636771644,
+      "state": {
+        "indexh": 1,
+        "indexf": -1
+      }
+    },
+    {
+      "timing": 0.5676239633084242,
       "state": {
         "indexh": 0,
+        "indexf": -1
+      }
+    },
+    {
+      "timing": 0.9765308698924761,
+      "state": {
+        "indexh": 3,
+        "indexf": -1
+      }
+    },
+    {
+      "timing": 0.9765308698924761,
+      "state": {
+        "indexh": 2,
         "indexf": -1
       }
     }
