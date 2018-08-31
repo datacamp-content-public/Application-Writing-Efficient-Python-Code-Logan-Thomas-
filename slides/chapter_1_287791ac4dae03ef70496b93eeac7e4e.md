@@ -114,7 +114,7 @@ ignsign
 
 
 ---
-## %timeit intro
+## Intro to %timeit
 
 ```yaml
 type: "FullSlide"
@@ -152,7 +152,7 @@ Now becomes
 
 
 ---
-## %timeit output
+## Output of %timeit
 
 ```yaml
 type: "FullSlide"
@@ -187,7 +187,7 @@ key: "28f20e20e6"
 
 
 ---
-## %timeit functionality
+## Functionality of %timeit 
 
 ```yaml
 type: "FullSlide"
@@ -222,7 +222,7 @@ key: "604f223d7e"
 
 
 ---
-## saving %timeit output
+## Saving %timeit Output
 
 ```yaml
 type: "FullSlide"
@@ -242,7 +242,20 @@ key: "0d2d88d034"
 
 
 `@script`
+- Another great functionality of the magic command %timeit, is the ability to save output as a variable
 
+- We do this by using the -o flag
+
+- This allows us to save the output of one %timeit analysis to compare to another.
+
+- It also allows us to dig deeper into the %timeit output for a given analysis
+
+- We can use methods like .average to see the average time across all runs
+
+- We can us the method .best and .worst to see the best and worst times across the runs within a %timeit analysis.
+
+- Take a look at the methods available by storing a %timeit analysis as the variable a and typing 
+a.[TAB]
 
 
 ---
