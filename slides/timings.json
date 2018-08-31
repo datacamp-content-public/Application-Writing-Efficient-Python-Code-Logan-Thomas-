@@ -77,5 +77,28 @@
         "indexf": -1
       }
     }
+  ],
+  "slides/chapter_1_425413fbd207d05912e93003195b8b40.md": [
+    {
+      "timing": 0,
+      "state": {
+        "indexh": 1,
+        "indexf": -1
+      }
+    },
+    {
+      "timing": 0,
+      "state": {
+        "indexh": 0,
+        "indexf": 0
+      }
+    },
+    {
+      "timing": 0,
+      "state": {
+        "indexh": 0,
+        "indexf": -1
+      }
+    }
   ]
 }
