@@ -250,9 +250,11 @@ key: "0d2d88d034"
 
 - It also allows us to dig deeper into the %timeit output for a given analysis
 
+- We can use the .all_runs method to see the average time across loops for each run
+
 - We can use methods like .average to see the average time across all runs
 
-- We can us the method .best and .worst to see the best and worst times across the runs within a %timeit analysis.
+- We can use the method .best and .worst to see the best and worst times across the runs within a %timeit analysis.
 
 - Take a look at the methods available by storing a %timeit analysis as the variable a and typing 
 a.[TAB]
