@@ -110,8 +110,7 @@ key: "8164cc28e0"
 
 - To see a list of all magic command available to us, use %lsmagic to list all magic commands.
 
-- We will focus only on the %timeit magic command moving forward, but it is helpful to know what magic commands are at your disposal. 
-ignsign
+- We will focus only on the %timeit magic command moving forward, but it is helpful to know what magic commands are at your disposal.
 
 
 ---
