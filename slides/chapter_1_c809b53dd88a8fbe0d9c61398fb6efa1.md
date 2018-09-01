@@ -39,19 +39,21 @@ key: "6d0c8b03e2"
 
 `@part1`
 - We could write our own timer...
-      import datetime as dt
-      import numpy as np
+      In [1]: import datetime as dt
+              import numpy as np
 
-      # set start time
-      start = dt.datetime.now()
+              # set start time
+              start = dt.datetime.now()
 
-      # Do something
-      rand_numbs = np.random.rand(1000000)
+              # Line of code to test
+              rand_numbs = np.random.rand(1000000)
 
-      # Calculate runtime (now - start)
-      run_time = dt.datetime.now() - start
+              # Calculate runtime (now - start)
+              run_time = dt.datetime.now() - start
 
-      print('run time: {}'.format(run_time))
+              print('run time: {}'.format(run_time))
+      
+      Out[1]: run time: 0:00:00.014011
 
 - But this seems verbose, clunky, and inefficient...
 
