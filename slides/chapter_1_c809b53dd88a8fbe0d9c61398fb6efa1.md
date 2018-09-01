@@ -22,9 +22,7 @@ title: Senior Data Scientist - Nielsen
 
 - In this lesson, we will learn how to test the run time of our code
 
-- As mentioned in the previous section, part of writing efficient Python code means writing code that executes quickly
-
-- Understanding the runtime for a given block of code is an important consideration when thinking about efficiency.
+- As mentioned in the previous section, runtime is an important consideration when thinking about efficiency.
 
 - Comparing run times between two code bases that effectively do the same thing allows us to pick the code with the optimal performance
 
@@ -61,15 +59,15 @@ key: "6d0c8b03e2"
 `@script`
 - In order to compare runtimes, we first need a way to compute the run time for a line or number of lines of code
 
-_ We could do this using a simple approach with the datetime module
+- We could do this using a simple approach with the datetime module
 
-- We would set the start date as the current time before executing a line of code.
+- We set the start time as the current time before executing a line of code.
 
-- We would then execute our line of code (here selecting 1 mil random numbers between 0 and 1)
+- We would then execute our line of code to be tested (here selecting 1 mil random numbers between 0 and 1)
 
 - Then, we would calculate the run time as the current time after executing our code minus what the start time was before executing our code
 
-- We print the run time in order to see how long selecting 1 mil random numbers took.
+- We then print the run time to see how long our code took.
 
 - Although this is one way to time a specific line of code, we can see that this would quickly become verbose and clunky.
 
@@ -102,9 +100,7 @@ key: "680195e261"
 
 - These commands are prefixed with the percentage sign
 
-- If you aren't familiar with magic commands, take a moment to review the documentation using the provided link.
-
-- To see a list of all magic command available to us, use %lsmagic to list all magic commands.
+- If you aren't familiar with magic commands, don't worry, take a moment to review the documentation using the provided link.
 
 - We will focus only on the %timeit magic command moving forward, but it is helpful to know what magic commands are at your disposal.
 
@@ -136,11 +132,9 @@ Now becomes
 
 
 `@script`
-- Now that we know we have a %timeit magic command in our toolbelt, how do we use it.
-
 - Consider the previous example where we wrote our own timer to get the runtime for selecting 1 mil random numbers between 0 and 1.
 
-- Instead of setting up a start time and calculating  the run time on our own, the magic command %timeit allows us to provide the single line of code we want to time.
+- Instead of calculating the run time on our own, the %timeit command allows us to provide a single line of code we want to time.
 
 - That's it! One line of code using the magic command %timeit allows to calculate the run time without developing any additional code.
 
@@ -153,21 +147,26 @@ Now becomes
 ```yaml
 type: "FullSlide"
 key: "a12f7bca3a"
+center_content: true
 ```
 
 `@part1`
 - %timeit gives additional information beyond one timer run
       In [1]: %timeit rand_numbs = np.random.rand(1000000)
       Out[1]: 12.7 ms ± 1.15 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
-    - 12.7 ms mean 
-    - 1.15 ms standard deviation
-    - 7 runs (with 100 loops each run)
+    - 12.7 ms mean, 1.15 ms standard deviation, 7 runs (with 100 loops each run)
+- Order of Time Reference
+
+| symbol |        name | unit (s) | 
+|--------|-------------|----------|
+|     ns |  nanosecond |  10^(-9) |
+|     µs | microsecond |  10^(-6) |
+|     ms | millisecond |  10^(-3) |
+|      s |      second |   10^(0) |
 
 
 `@script`
-- The magic command %timeit not only allows us to time specific lines of code quickly, it also provides additional information that we weren't getting with our old inefficient timer.
-
-- Notice that the output of %timeit provides some useful information
+- %timeit provides additional information that we weren't getting with our old inefficient timer.
 
 - First, we see that a mean and standard deviation of time is provided
 
@@ -175,9 +174,7 @@ key: "a12f7bca3a"
 
 - This is another advantage of using the magic command %timeit.
 
-- %timeit will not just run through the provided code once like our old inefficeint timer did.
-
-- Instead, %timeit will run through the provided code multiple times and provided an average and standard deviation for the runtime of the code.
+- %timeit will run through the provided code multiple times and provided an average and standard deviation across runs to calculate the runtime of our code.
 
 - This helps us get a more accurate representation of the actual runtime rather than relying on just one iteration of the code as we did in the past.
 
@@ -208,9 +205,9 @@ key: "4d19ac90ae"
 
 
 `@script`
-- %timeit doesn't just give us more information about the runtime of a given code block, it also gives us some handy functionality as well.
+- %timeit gives us some handy functionality as well.
 
-- We can specify the number of runs using the -r flag and the number of loops using the -n flag.
+- We can specify the number of runs using the -r flag and the number of loops using the -n flags seen here.
 
 - We can also run %timeit on a single line of code (called line magic) using one Percentage sign, or, we can run %timeit on multiple lines of code (called cell magic) using two Percentage sings.
 
@@ -243,16 +240,9 @@ key: "2ddefa2c61"
 
 - This allows us to save the output of one %timeit analysis to compare to another.
 
-- It also allows us to dig deeper into the %timeit output for a given analysis
+- We can also dig deeper into the %timeit output for a given analysis when we save the output
 
-- We can use the .all_runs method to see the average time across loops for each run
-
-- We can use methods like .average to see the average time across all runs
-
-- We can use the method .best and .worst to see the best and worst times across the runs within a %timeit analysis.
-
-- Take a look at the methods available by storing a %timeit analysis as the variable a and typing 
-a.[TAB]
+- We can use methods like .best and .worst to see the best and worst times across the runs within a %timeit analysis.
 
 
 ---
@@ -273,7 +263,7 @@ center_content: false
           l = []
           for x in range(1000):
               l.append(x)
-              return l
+          return l
 
       In [1]: a_time = %timeit -o make_list_a()
       Out[1]: 37.9 µs ± 1.16 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
@@ -287,7 +277,7 @@ center_content: false
 
 
 `@script`
-- Now that we know how to use the %timeit magic command and how to store its output, we can begin comparing results
+- Now we can begin comparing results
 
 - Suppose you have two functions that do the exact same thing (in this case build a list of integers from 0 to 999).
 
@@ -295,38 +285,9 @@ center_content: false
 
 - make_list_b() uses a for loop to loop over the integers and adds each integer to a list
 
-- We can to see which of these implementations is faster and more efficient
-
-- We can compare the two functions using the %timeit magic command
+- We can use %timeit to see which of these implementations is faster and more efficient
 
 - Here we see that the list comprehension method (make_list_a) is a much better implementation.
-
-
----
-## Order of Time
-
-```yaml
-type: "FullSlide"
-key: "7edb240aa3"
-```
-
-`@part1`
-- Reference for orders of magnitude (fastest at top)
-
-| symbol |        name | unit (s) | 
-|--------|-------------|----------|
-|     ns |  nanosecond |  10^(-9) |
-|     µs | microsecond |  10^(-6) |
-|     ms | millisecond |  10^(-3) |
-|      s |      second |   10^(0) |
-
-
-`@script`
-- For convenience, a table to time orders of magnitude is provided here
-
-- The table is ordered from fastest at the top to slowest at the bottom. 
-
-- Feel free to reference this table when comparing %timeit analyses
 
 
 ---
@@ -338,5 +299,5 @@ key: "bbd83e71db"
 ```
 
 `@script`
-- Now that we know how to use the magic command %timeit, we can compare different codes bases in order to select the one that is most efficient
+- Now we can use %timeit to compare different codes bases in order to select the one that is most efficient. It's Off to the Races!
 
