@@ -151,7 +151,7 @@ center_content: true
 ```
 
 `@part1`
-- %timeit gives additional information beyond one timer run
+- `%timeit` gives additional information
       In [1]: %timeit rand_numbs = np.random.rand(1000000)
       Out[1]: 12.7 ms ± 1.15 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
     - 12.7 ms mean, 1.15 ms standard deviation, 7 runs (with 100 loops each run)
@@ -188,12 +188,12 @@ key: "4d19ac90ae"
 ```
 
 `@part1`
-- %timeit provides functionality for setting the number of runs and/or loops
-      # Set number of runs to 1; number of loops to 10
+- `%timeit` provides functionality for setting the number of runs and/or loops
+      # Set number of runs to 1 (-r1); number of loops to 10 (-n10)
       In [1]: %timeit -r1 -n10 rand_numbs = np.random.rand(1000000)
       Out[1]: 13.4 ms ± 0 ns per loop (mean ± std. dev. of 1 run, 10 loops each)
         
-- %timeit can be run on a single line or multiple lines of code
+- `%timeit` can be run on a single line or multiple lines of code
       # Single line (line magic)
       %timeit l = [x for x in range(10)] 
         
@@ -223,10 +223,10 @@ key: "2ddefa2c61"
 ```
 
 `@part1`
-- %timeit also allows us to save the output as a variable
+- `%timeit` also allows us to save the output as a variable
       a = %timeit -o rand_numbs = np.random.rand(1000000)
 
-- This allows us to dig deeper into the execution times of each run
+- This allows us to dig deeper into the `%timeit` output
     - a.all_runs
     - a.average 
     - a.best
@@ -255,7 +255,7 @@ center_content: false
 ```
 
 `@part1`
-- Saving the output from two %timeit analyses makes it easy to compare
+- Saving the output from two `%timeit` analyses makes it easy to compare
       def make_list_a():
           return [x for x in range(1000)]
 
