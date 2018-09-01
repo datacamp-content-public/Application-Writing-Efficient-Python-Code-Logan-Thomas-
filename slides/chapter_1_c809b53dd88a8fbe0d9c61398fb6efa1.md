@@ -45,7 +45,7 @@ key: "6d0c8b03e2"
               # set start time
               start = dt.datetime.now()
 
-              # Line of code to test
+              # Line of code to time
               rand_numbs = np.random.rand(1000000)
 
               # Calculate runtime (now - start)
@@ -53,7 +53,7 @@ key: "6d0c8b03e2"
 
               print('run time: {}'.format(run_time))
       
-      Out[1]: run time: 0:00:00.014011
+      Out[1]: run time: 0:00:00.012009
 
 - But this seems verbose, clunky, and inefficient...
 
@@ -117,20 +117,25 @@ key: "4dad699894"
 
 `@part1`
 Old, inefficient timer
-      # set start time
-      start = dt.datetime.now()
 
-      # Do something
-      rand_numbs = np.random.rand(1000000)
+      In [1]: # set start time
+              start = dt.datetime.now()
 
-      # Calculate runtime (now - start)
-      run_time = dt.datetime.now() - start
+              # Line of code to time
+              rand_numbs = np.random.rand(1000000)
 
-      print('run time: {}'.format(run_time))
+              # Calculate runtime (now - start)
+              run_time = dt.datetime.now() - start
+
+              print('run time: {}'.format(run_time))
+
+      Out[1]: run time: 0:00:00.012009
 
 Now becomes
 
-      %timeit rand_numbs = np.random.rand(1000000)
+      In [2]: %timeit rand_numbs = np.random.rand(1000000)
+
+      Out[2]: 12.7 ms ± 1.15 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
 
 
 `@script`
